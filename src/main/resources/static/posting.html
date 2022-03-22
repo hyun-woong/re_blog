@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Special || HangHae99</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="posting.css">
+    <script src="posting.js"></script>
+
+</head>
+
+<body>
+<div class="background-header">
+
+</div>
+<div class="background-body">
+
+</div>
+<div class="wrap">
+    <!--    상단 타이틀 배너-->
+    <div class="header">
+        <h2>So Special HangHae99</h2>
+        <p>
+            쏘우 ★ 스페셜 ★ 드뢉 더 포스트 ★
+            ✶ 너의 포스팅을 보여줘 ✶
+        </p>
+    </div>
+    <div id="cards-box" class="area-read">
+    </div>
+</div>
+
+<div class="list">
+    <!--등록하기 버튼-->
+    <div class="posting-btn">
+        <button class="button is-dark" onclick="post_save()">등록하기</button>
+    </div>
+    <!--    input-box-->
+    <div class="contents-Box">
+        <!--    Title-Box-->
+        <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+                <input id="title_box" class="input" type="text" placeholder="Text input">
+            </div>
+        </div>
+        <!--    Username-Box-->
+        <div class="field">
+            <label class="label">Username</label>
+            <div class="control has-icons-left has-icons-right">
+                <input id="username_box" class="input is-success" type="text" placeholder="" value="">
+                <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+                <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+            </div>
+        </div>
+        <!--Contents-->
+        <div class="contents-min_box">
+            <div class="field">
+                <label class="label">Contents</label>
+                <div class="control">
+                    <textarea id="contents_box" class="textarea" placeholder="Textarea" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
