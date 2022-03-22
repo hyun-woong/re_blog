@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     // HTML 문서를 로드할 때마다 실행합니다.
     getMessages();
@@ -13,7 +12,7 @@ function getMessages() {
         type: 'GET',
         url: '/api/blogs',
         success: function (response) {
-            console.log(response);
+            console.log(response)
             for (let i = 0; i < response.length; i++) {
                 let blog = response[i];
                 let id = blog.id;
@@ -33,7 +32,7 @@ function addHTML(id, username, title, modifiedAt) {
              <tr>
                 <th>${id}</th>
                 <td>${title}</td>
-                <td style="cursor: pointer" class="title_focus" onclick="showPost()">${username}</td>
+                <td style="cursor: pointer" class="title_focus" onclick="showPost(${id})">${username}</td>
                 <td>${modifiedAt}</td>
             </tr>
         
@@ -47,6 +46,7 @@ function writePost() {
     window.location.href = 'posting.html';
 }
 
-function showPost() {
-    window.location.href = 'mainPost.html'
+function showPost(id) {
+    console.log(id);
+    window.location.href = `mainPost.html?id=${id}`
 }

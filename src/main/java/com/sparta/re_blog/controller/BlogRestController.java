@@ -3,11 +3,9 @@ package com.sparta.re_blog.controller;
 
 import com.sparta.re_blog.models.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,8 +24,10 @@ public class BlogRestController {
         return blogRepository.findAllByOrderByModifiedAtDesc();
     }
 
-    @GetMapping("/api/mainPost")
-    public List<Blog> getMainPost() {return blogRepository.findAllByOrderByModifiedAtDesc();
+    @GetMapping("/api/mainPost/{id}")
+    public Blog getMainPost(@PathVariable Long id) {return blogRepository.findById(id).orElseThrow(
+            () -> new IllegalArgumentException("게시글이 존재하지 않습니다.")
+    );
     }
 
 }
