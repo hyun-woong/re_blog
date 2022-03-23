@@ -43,10 +43,10 @@ function addHTML(id, username, title, modifiedAt) {
 
 
 function writePost() {
-    window.location.href = 'posting.html';
+    window.location.href = './html/posting.html';
 }
 
 function showPost(id) {
     console.log(id);
-    window.location.href = `mainPost.html?id=${id}`
+    window.location.href = `./html/mainPost.html?id=${id}`
 }
