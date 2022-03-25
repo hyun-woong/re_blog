@@ -7,7 +7,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @MappedSuperclass //Entity가 자동으로 컬럼으로 인식
@@ -19,9 +21,9 @@ public abstract class Timestamped {
     //시간을 임의로 변경하면 안되기 때문일거라 사료됨
 
     @CreatedDate //생성시간
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
     @LastModifiedDate //수정시간
-    private LocalDateTime modifiedAt;
+    private LocalDate modifiedAt;
 
 }

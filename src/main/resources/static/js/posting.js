@@ -63,7 +63,7 @@ function post_save() {
         data: JSON.stringify(data),
         success: function (response) {
             alert('게시글이 성공적으로 작성되었습니다.');
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
     });
 }

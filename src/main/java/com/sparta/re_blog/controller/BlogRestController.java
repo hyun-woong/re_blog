@@ -30,6 +30,12 @@ public class BlogRestController {
     );
     }
 
+    @DeleteMapping("/api/mainPost/{id}")
+    public Long deletePost(@PathVariable Long id){
+        blogRepository.deleteById(id);
+        return id;
+    }
+
 }
 
 

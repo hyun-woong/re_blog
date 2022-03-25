@@ -42,7 +42,13 @@ function getMessages(id) {
       <article class="message is-dark">
         <div class="message-body">
           ${contents}
+     <!--        삭제버튼-->
+         <div class="delete_btn" onclick="deleteOne('${id}')" id="${id}-delete">
+            <button class="button is-black" >삭제하기</button>
+         </div>     
         </div>
+
+       
       </article>
     </article>
   </div>
@@ -52,6 +58,19 @@ function getMessages(id) {
     })
 //메인페이지로 돌아가기
 }
+
+function deleteOne(id) {
+    // 1. DELETE /api/memos/{id} 에 요청해서 메모를 삭제합니다.
+        $.ajax({
+            type: "DELETE",
+            url: `/api/mainPost/${id}`,
+            success: function (response) {
+                alert('메시지 삭제에 성공하였습니다.');
+                window.location.href = '../index.html';
+            }
+        })
+}
+
 function back_page(){
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
